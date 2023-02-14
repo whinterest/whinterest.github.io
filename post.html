@@ -41,6 +41,106 @@
     		<a class="nav-link" href="#" id="dropdown02" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
     		<svg style="margin-top:10px;" class="_3DJPT" version="1.1" viewbox="0 0 32 32" width="21" height="21" aria-hidden="false" data-reactid="71"><path d="M7 15.5c0 1.9-1.6 3.5-3.5 3.5s-3.5-1.6-3.5-3.5 1.6-3.5 3.5-3.5 3.5 1.6 3.5 3.5zm21.5-3.5c-1.9 0-3.5 1.6-3.5 3.5s1.6 3.5 3.5 3.5 3.5-1.6 3.5-3.5-1.6-3.5-3.5-3.5zm-12.5 0c-1.9 0-3.5 1.6-3.5 3.5s1.6 3.5 3.5 3.5 3.5-1.6 3.5-3.5-1.6-3.5-3.5-3.5z" data-reactid="22"></path></svg>
     		</a>
+    		<div class="dropdown-menu dropdown-menu-right shadow-lg" aria-labelledby="dropdown02">
+				<!-- HTML !-->
+				<audio id="myAudio">
+				  <source src="assets/music/song.mp3" type="audio/mpeg">
+				  Your browser does not support the audio element.
+				</audio>
+				
+    			<h4 class="dropdown-header display-4">Play Music<br/>Ozzy Osbourne - Eat Me</h4>
+    			<div class="dropdown-divider">
+    			</div>	
+				<div class="wrapper">				
+				<button class="button-85" id="playButton" role="button">Play</button></div>
+
+				<style>				
+				.wrapper {
+					text-align: center;
+				}
+				
+				.button-85 {
+				  padding: 0.6em 2em;
+				  border: none;
+				  outline: none;
+				  color: rgb(255, 255, 255);
+				  background: #111;
+				  cursor: pointer;
+				  position: relative;
+				  z-index: 0;
+				  border-radius: 10px;
+				  user-select: none;
+				  -webkit-user-select: none;
+				  touch-action: manipulation;
+				}
+
+				.button-85:before {
+				  content: "";
+				  background: linear-gradient(
+					45deg,
+					#ff0000,
+					#ff7300,
+					#fffb00,
+					#48ff00,
+					#00ffd5,
+					#002bff,
+					#7a00ff,
+					#ff00c8,
+					#ff0000
+				  );
+				  position: absolute;
+				  top: -2px;
+				  left: -2px;
+				  background-size: 400%;
+				  z-index: -1;
+				  filter: blur(5px);
+				  -webkit-filter: blur(5px);
+				  width: calc(100% + 4px);
+				  height: calc(100% + 4px);
+				  animation: glowing-button-85 20s linear infinite;
+				  transition: opacity 0.3s ease-in-out;
+				  border-radius: 10px;
+				}
+
+				@keyframes glowing-button-85 {
+				  0% {
+					background-position: 0 0;
+				  }
+				  50% {
+					background-position: 400% 0;
+				  }
+				  100% {
+					background-position: 0 0;
+				  }
+				}
+
+				.button-85:after {
+				  z-index: -1;
+				  content: "";
+				  position: absolute;
+				  width: 100%;
+				  height: 100%;
+				  background: #222;
+				  left: 0;
+				  top: 0;
+				  border-radius: 10px;
+				}
+				</style>	
+				<script>
+				  var audio = document.getElementById("myAudio");
+				  var playButton = document.getElementById("playButton");
+
+				  playButton.addEventListener("click", function () {
+					audio.play();
+				  });
+
+				  audio.addEventListener("ended", function () {
+					audio.currentTime = 0;
+					audio.play();
+				  });
+				</script>
+				
+    		</div>						
     		</li>
     	</ul>
     </div>
